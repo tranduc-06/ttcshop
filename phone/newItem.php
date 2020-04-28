@@ -195,14 +195,14 @@ $result = mysqli_query($connect, "SELECT * FROM products");
                                             <div class="thumb-wrapper" >
                                                 <div class="img-box">
                                                 <a  href="./phone/add_cart.php?buynow=' . $row[$i][0] . '">
-                                                <img src="./images/' . $row[$i][5] . '" class="img-responsive img-fluid" >
+                                                <img src="./images/' . $row[$i]['image'] . '" class="img-responsive img-fluid" >
                                                 </a>
                                                 
                                                 </div>
                                                
                                                 <div class="thumb-content">
                                                     <h4>' . $row[$i][1] . '</h4>
-                                                    <p class="item-price"><strike>$400.00</strike> <span>' . $row[$i][2] . '</span></p>
+                                                    <p class="item-price"><strike>$400.00</strike> <span>' . $row[$i]['price'] . '<sup>đ</sup></span></p>
                                                     <div class="star-rating">
                                                         <ul class="list-inline">
                                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -212,9 +212,7 @@ $result = mysqli_query($connect, "SELECT * FROM products");
                                                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                                         </ul>
                                                     </div>
-                                                    <form action="./phone/add_cart.php" method="GET">
-                                                        <button type="submit" name="buynow" value = "' . $row[$i][0] . '"class="btn btn-primary" >Buy now</button>
-                                                    </form>                     
+                                                                     
                                                 </div>
                                             </div>
                                         </div>';
@@ -228,16 +226,18 @@ $result = mysqli_query($connect, "SELECT * FROM products");
                                     for ($i = 4; $i <= 6; $i++) {
                                         $row[$i] =  mysqli_fetch_array($result);
                                         echo '   
-                                        <div class="col-sm-4">
-                                            <div class="thumb-wrapper">
+                                        <div class="col-sm-4 ">
+                                            <div class="thumb-wrapper" >
                                                 <div class="img-box">
                                                 <a  href="./phone/add_cart.php?buynow=' . $row[$i][0] . '">
-                                                <img src="./images/' . $row[$i][5] . '" class="img-responsive img-fluid" >
-                                                </a>                      
-                                                </div>                     
+                                                <img src="./images/' . $row[$i]['image'] . '" class="img-responsive img-fluid" >
+                                                </a>
+                                                
+                                                </div>
+                                               
                                                 <div class="thumb-content">
-                                                    <h4>' . $row[$i][1] . '</h4>
-                                                    <p class="item-price"><strike>$400.00</strike> <span>' . $row[$i][2] . '</span></p>
+                                                    <h4>' . $row[$i]['name'] . '</h4>
+                                                    <p class="item-price"><strike>$400.00</strike> <span>' . $row[$i]['price'] . '<sup>đ</sup></span></p>
                                                     <div class="star-rating">
                                                         <ul class="list-inline">
                                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -247,10 +247,7 @@ $result = mysqli_query($connect, "SELECT * FROM products");
                                                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                                         </ul>
                                                     </div>
-                                                     <form action="./phone/add_cart.php" method="GET">
-                                                        <button type="submit" name="buynow" value = "' . $row[$i][0] . '"class="btn btn-primary" >Buy now</button>
-                                                    </form>
-                                                    
+                                                                     
                                                 </div>
                                             </div>
                                         </div>';

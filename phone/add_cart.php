@@ -43,7 +43,7 @@ if (isset($_COOKIE['userId'])) {
 
     <head>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
         <link href="../CSS/demo.css" rel="stylesheet">
@@ -102,6 +102,13 @@ if (isset($_COOKIE['userId'])) {
             </div>
             <?php echo $row['description'] ?>
         </div>
+        <div class="container mt-3 mb-3">
+            <h5 class="text-danger">Video review</h5>
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/1qZECp4JzRE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+       <?php
+       include('../includes/foot.php');
+       ?>
     </body>
 
     </html>
